@@ -1,0 +1,23 @@
+{%extends 'base.html'%}
+{%block title%}Report{%endblock%}
+
+{%block body%}
+<div class="container">
+	<table class="table">
+		<thead>
+			<th>From Location</th>
+			<th>To Location</th>
+			<th>Product</th>
+			<th>Quantity</th>
+		</thead>
+		{%for r in movements%}
+		<tr>
+			<td>{{r.from_location}}</td>
+			<td>{{r.to_location}}</td>
+            <td>{{r.pro_id}}</td>
+            <td>{{r.quantity}}</td>
+		</tr>
+		{%endfor%}
+	</table>
+</div>
+{%endblock%}

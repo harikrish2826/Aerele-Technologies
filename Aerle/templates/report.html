@@ -1,0 +1,21 @@
+{%extends 'base.html'%}
+{%block title%}Report{%endblock%}
+
+{%block body%}
+<div class="container">
+	<table class="table">
+		<thead>
+			<th>Location</th>
+			<th>Product</th>
+			
+		</thead>
+		{%for reports in r%}
+		<tr>
+			<td>{{reports.location}}</td>
+            <td>{{reports.product}}</td>
+            
+		</tr>
+		{%endfor%}
+	</table>
+</div>
+{%endblock%}

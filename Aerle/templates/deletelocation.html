@@ -1,0 +1,13 @@
+{% extends 'base.html'%}
+{%block title%}Delete Location{%endblock%}
+{%block body%}
+<div class="container">
+	<h2><label>Location Name</label></h2><br>
+	<form action="/deletel" method="POST">
+
+		<input type="text" class="mt-2" name="upid" placeholder ="Location Id">
+
+		<a href="/locations" class="btn btn-danger" >Delete</a>
+	</form>
+</div>
+{%endblock%}

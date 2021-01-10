@@ -1,0 +1,33 @@
+{% extends 'base.html'%}
+{% block title %}Products{%endblock%}
+
+{% block body%}
+<div class="container">
+	<h2 class="text-center mt-2">Products</h2>
+	<form action="/products" method="post">
+		<input type="text" class=" mt-2" name="pid" placeholder="Enter id">
+		<input type="text" class=" mt-2" name="pname" placeholder="Enter Productname">
+        <input type="text" class=" mt-2" name="quantity" placeholder="Enter Quantity"><br>
+		<input type="submit" class="center btn btn-primary mt-2" value="Add">
+	</form>
+	<table class="table">
+		<thead class="thead thead-light">
+			<th>ID</th>
+			<th>NAME</th>
+			<th>QUANTITY</th>
+			<th>ACTION</th>
+		</thead>
+		{% for p in products%}
+		<tr>
+			<td>{{p.id}}</td>
+			<td>{{p.name}}</td>
+			<td>{{p.quantity}}</td>
+			<td >
+			<a href="/products/updateproduct" class="btn btn-primary" >Update</a>
+			<a href="/products/deleteproduct" class="btn btn-danger" >Delete</a></td>
+		</tr>
+		{%endfor%}
+		
+	</table>
+</div>
+{%endblock%}

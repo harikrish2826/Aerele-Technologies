@@ -1,0 +1,30 @@
+{% extends 'base.html'%}
+{%block title%}Location{%endblock%}
+{%block body%}
+
+<div class="container">
+	<h2 class="text-center mt-2">Locations</h2>
+	<form action="/locations" method="post">
+		<input type="text" class="mt-2" name="lid" placeholder="Location Id">
+		<input type="text" class="mt-2" name="lname" placeholder="Location Name">
+		<input type="submit" class="center btn btn-primary mt-2" value="Add">
+	</form>
+	<table class="table">
+		<thead class="thead thead-light">
+			<th>ID</th>
+			<th>NAME</th>
+			<th>ACTION</th>
+		</thead>
+		{% for l in locations%}
+		<tr>
+			<td>{{l.id}}</td>
+			<td>{{l.name}}</td>
+			<td><a href="/locations/updatelocation" class="btn btn-primary" >Update</a>
+
+			<a href="/locations/deletelocation" class="btn btn-danger" >Delete</a>
+		</tr>	
+		{%endfor%}
+		
+	</table>
+</div>
+{%endblock%}

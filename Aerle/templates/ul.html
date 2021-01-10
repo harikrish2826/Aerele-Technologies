@@ -1,0 +1,13 @@
+{% extends 'base.html'%}
+{%block title%}Update Product{%endblock%}
+{%block body%}
+<div class="container">
+	<h2><label>Product Name</label></h2><br>
+	<form action="/updatel" method="POST">
+
+		<input type="text" class="mt-2" name="upid" placeholder ="Location Id">
+		<input type="text" class="mt-2" name="quan" placeholder= "Quantity">
+		<a href="/locations" class="btn btn-primary" >Update</a>
+	</form>
+</div>
+{%endblock%}
